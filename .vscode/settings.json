@@ -1,0 +1,17 @@
+{
+  "explorer.excludeGitIgnore": true,
+  "search.useIgnoreFiles": true,
+  "git.openRepositoryInParentFolders": "never",
+  "files.exclude": {
+    "**/.next": true,
+    "**/node_modules": true
+  },
+  "search.exclude": {
+    "**/.next": true,
+    "**/node_modules": true
+  },
+  "files.watcherExclude": {
+    "**/node_modules/**": true,
+    "**/.next/**": true
+  }
+}

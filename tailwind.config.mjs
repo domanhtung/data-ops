@@ -1,0 +1,123 @@
+/** @type {import('tailwindcss').Config} */
+const config = {
+  content: ["./src/**/*.{js,ts,jsx,tsx}"],
+  theme: {
+    extend: {
+      colors: {
+        "neutral-200": "#e7e6f4",
+        "neutral-600": "#51516d",
+        "stroke-white-0": "#fff",
+        "text-white-0": "#fff",
+        "stroke-sub-300": "#c4c4da",
+        "neutral-800": "#29293b",
+        "text-sub-500": "#686882",
+        "text-main-900": "#181824",
+        "bg-white-0": "#fff",
+        "neutral-500": "#686882",
+        "text-disable-200": "#e7e6f4",
+        "text-soft-400": "#808098",
+        "bg-weak-100": "#f8f6fa",
+        "bg-surface-700": "#3c3c54",
+        "neutral-100": "#f8f6fa",
+        "neutral-0": "#fff",
+        "neutral-300": "#c4c4da",
+        "neutral-900": "#181824",
+        "bg-strong-900": "#181824",
+        ghostwhite: "rgba(248, 246, 250, 0.2)",
+        silver: "rgba(184, 184, 198, 0.5)",
+        /** Open Projects / UIPro — status + hiring */
+        "light-green-base": "#16a34a",
+        /** Progress track under slider image */
+        "bg-soft-200": "#e4e3ec",
+      },
+      spacing: {
+        "num-1920": "1920px",
+        "num-315": "315px",
+        "num-263": "263px",
+        "num-1024": "1024px",
+        "num-628": "628px",
+        "num-17": "17px",
+        "num-auto": "auto",
+        "num-1": "1px solid #fff",
+        "num-2": "1px solid rgba(184, 184, 198, 0.5)",
+        "num-3": "1px solid #c4c4da",
+        "num-120": "120px",
+        "num-1560": "1560px",
+        "num-368": "368px",
+        "num-372": "372px",
+        "num-340": "340px",
+        "num-199": "199px",
+        "num-53": "53px",
+        "num-92": "92px",
+        "num-146": "146px",
+        "num-316": "316px",
+        "num-238": "238px",
+        "num-86_7": "86.7px",
+        "num-189_5": "189.5px",
+        "num-110_7": "110.7px",
+      },
+      opacity: {
+        "num-0": "0",
+      },
+      fontFamily: {
+        "helvetica-now-display": [
+          "Helvetica Now Display",
+          "Inter",
+          "ui-sans-serif",
+          "system-ui",
+          "sans-serif",
+        ],
+      },
+      borderRadius: {
+        "num-16": "16px",
+        "num-24": "24px",
+        "num-10": "10px",
+        "num-12": "12px",
+        "num-50": "50%",
+        "num-8": "8px",
+      },
+      padding: {
+        "num-14": "14px",
+        "num-0": "0px",
+        "num-86": "86px",
+        "num-180": "180px",
+        "num-6": "6px",
+        "num-4": "4px",
+        "num-22": "22px",
+        "num-23": "23px",
+        "num-11": "11px",
+        "num-15": "15px",
+      },
+      fontSize: {
+        "num-18": "18px",
+        "num-40": "40px",
+        "num-14": "14px",
+        "num-16": "16px",
+      },
+      lineHeight: {
+        "num-20": "20px",
+        "num-48": "48px",
+        "num-32": "32px",
+        "num-24": "24px",
+      },
+      letterSpacing: {
+        "num--0_01": "-0.01em",
+        "num-0_06": "0.06em",
+      },
+      keyframes: {
+        "trusted-by-marquee": {
+          from: { transform: "translateX(0)" },
+          to: { transform: "translateX(-50%)" },
+        },
+      },
+      animation: {
+        "trusted-by-marquee": "trusted-by-marquee 45s linear infinite",
+      },
+    },
+  },
+  corePlugins: {
+    preflight: false,
+  },
+};
+
+export default config;
