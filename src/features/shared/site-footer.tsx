@@ -8,6 +8,10 @@ import { siteFooterBrand, siteFooterColumns } from "@/features/shared/site-foote
 
 /** Shared site footer for home, projects, and other marketing surfaces. */
 export function SiteFooter() {
+  const handleBackToTopClick = () => {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
   return (
     <footer className="relative w-full overflow-hidden bg-bg-strong-900 text-left text-neutral-600 font-helvetica-now-display">
       <Image
@@ -56,6 +60,7 @@ export function SiteFooter() {
               arrowLeftSLineLeft="0px"
               arrowLeftSLineWidth="130px"
               arrowLeftSLineHeight="40px"
+              onClick={handleBackToTopClick}
             />
           </div>
         </div>
