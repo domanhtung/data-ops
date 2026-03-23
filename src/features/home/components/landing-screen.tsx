@@ -15,13 +15,13 @@ import { ValuePropositionSection } from "@/features/home/components/sections/Val
  */
 export default function HomeLanding() {
   return (
-    <div className="relative flex w-full min-h-0 items-start overflow-hidden bg-white leading-[normal] tracking-[normal]">
+    <div className="relative flex w-full min-h-0 items-start overflow-x-clip bg-white leading-[normal] tracking-[normal]">
       <main
-        className="relative isolate flex max-w-full shrink-0 flex-col items-center justify-center">
+        className="relative isolate flex w-full flex-col items-center justify-center">
         <HeroBackdrop />
         <HeroHeaderSection />
         <ValuePropositionSection />
-        <div className="z-[3] flex h-px w-num-1920 flex-col items-center justify-center" />
+        <div className="z-[3] flex h-px w-full max-w-num-1920 flex-col items-center justify-center" />
         <QualityTrustSection />
         <PlatformAllInOneSection />
         <HowItWorksSection />

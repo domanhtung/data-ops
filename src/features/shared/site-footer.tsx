@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import { AnimatedTextReveal } from "@/features/shared/animated-text-reveal";
 import { UiproPillButton } from "@/features/shared/uipro-pill-button";
 import { SITE_PAGE_GUTTER_CLASS } from "@/features/shared/page-gutter";
 import { siteFooterBrand, siteFooterColumns } from "@/features/shared/site-footer-data";
@@ -39,7 +40,7 @@ export function SiteFooter() {
             className="mt-12 text-[clamp(3.5rem,14vw,15.4rem)] font-bold leading-none tracking-tight text-stroke-white-0 opacity-10"
             aria-hidden
           >
-            {siteFooterBrand.name}
+            <AnimatedTextReveal text={siteFooterBrand.name} ariaHidden />
           </div>
           <div className="mt-10 flex flex-col gap-6 border-t border-white/10 pt-8 text-num-18 text-text-soft-400 sm:flex-row sm:items-center sm:justify-between">
             <div className="leading-num-24">{siteFooterBrand.copyright}</div>

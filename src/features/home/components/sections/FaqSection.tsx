@@ -1,11 +1,13 @@
 import Image from "next/image";
 import { FaqAccordionItem } from "@/features/home/components/ui/faq-accordion-item";
+import { AnimatedTextReveal } from "@/features/shared/animated-text-reveal";
+import { ScrollFadeInOnView } from "@/features/shared/scroll-fade-in-on-view";
 import { UiproPillButton } from "@/features/shared/uipro-pill-button";
 import { faqItems } from "@/features/home/data/home-content";
 
 export function FaqSection() {
   return (
-    <section className="w-num-1920 flex flex-col items-center justify-center py-[120px] px-num-180 box-border gap-12 z-[10] text-left text-num-18 text-text-main-900 font-helvetica-now-display">
+    <section className="w-full max-w-num-1920 flex flex-col items-center justify-center py-[120px] px-num-180 box-border gap-12 z-[10] text-left text-num-18 text-text-main-900 font-helvetica-now-display">
       <section className="self-stretch flex flex-col items-center gap-6 text-center text-[16px] text-text-sub-500 font-helvetica-now-display">
         <div className="flex items-center gap-[11.5px]">
           <Image
@@ -32,20 +34,25 @@ export function FaqSection() {
         </div>
         <div className="self-stretch flex flex-col items-start text-num-40 text-text-main-900">
           <h2 className="m-0 self-stretch relative text-[length:inherit] tracking-num--0_01 leading-num-48 font-medium font-[inherit]">
-            Everything You Need to Know
+            <AnimatedTextReveal text="Everything You Need to Know" />
           </h2>
         </div>
       </section>
 
-      <div className="w-num-1024 flex max-w-full flex-col items-start">
+      <div className="w-full max-w-num-1024 flex flex-col items-start">
         <div className="flex w-full flex-col items-start gap-4 self-stretch">
           {faqItems.map((item, index) => (
-            <FaqAccordionItem key={index} item={item} />
+            <ScrollFadeInOnView key={index} delayMs={Math.min(index * 50, 220)}>
+              <FaqAccordionItem item={item} />
+            </ScrollFadeInOnView>
           ))}
         </div>
       </div>
 
-      <section className="w-num-1024 rounded-num-12 bg-neutral-900 overflow-hidden flex items-end justify-center p-6 box-border gap-6 text-left text-[32px] text-stroke-white-0 font-helvetica-now-display">
+      <ScrollFadeInOnView
+        as="section"
+        className="w-full max-w-num-1024 rounded-num-12 bg-neutral-900 overflow-hidden flex items-end justify-center p-6 box-border gap-6 text-left text-[32px] text-stroke-white-0 font-helvetica-now-display"
+      >
         <div className="flex flex-1 flex-col items-start gap-4">
           <h2 className="m-0 self-stretch relative text-[length:inherit] leading-10 font-medium font-[inherit]">
             Still have questions?
@@ -64,7 +71,7 @@ export function FaqSection() {
           arrowLeftSLineFlex="unset"
           arrowLeftSLineAlignSelf="unset"
         />
-      </section>
+      </ScrollFadeInOnView>
     </section>
   );
 }

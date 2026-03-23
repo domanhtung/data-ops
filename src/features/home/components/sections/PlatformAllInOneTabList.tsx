@@ -13,9 +13,8 @@ const ARROW_PX = 20;
 
 export type PlatformAllInOneTabListProps = {
   labels: readonly string[];
-  selectedIndex: number;
-  onSelect: (index: number) => void;
-  panelId: string;
+  activeIndex: number;
+  panelIdPrefix?: string;
 };
 
 /**
@@ -23,23 +22,22 @@ export type PlatformAllInOneTabListProps = {
  */
 export function PlatformAllInOneTabList({
   labels,
-  selectedIndex,
-  onSelect,
-  panelId,
+  activeIndex,
+  panelIdPrefix,
 }: PlatformAllInOneTabListProps) {
   const listRef = useRef<HTMLDivElement>(null);
-  const tabRefs = useRef<(HTMLButtonElement | null)[]>([]);
+  const tabRefs = useRef<(HTMLDivElement | null)[]>([]);
   const [arrowOffsetY, setArrowOffsetY] = useState(0);
 
   const measureArrow = useCallback(() => {
     const list = listRef.current;
-    const tab = tabRefs.current[selectedIndex];
+    const tab = tabRefs.current[activeIndex];
     if (!list || !tab) return;
     const listRect = list.getBoundingClientRect();
     const tabRect = tab.getBoundingClientRect();
     const centerY = tabRect.top - listRect.top + tabRect.height / 2;
     setArrowOffsetY(centerY - ARROW_PX / 2);
-  }, [selectedIndex]);
+  }, [activeIndex]);
 
   useLayoutEffect(() => {
     measureArrow();
@@ -53,7 +51,7 @@ export function PlatformAllInOneTabList({
     return () => ro.disconnect();
   }, [measureArrow]);
 
-  const setTabRef = useCallback((index: number, el: HTMLButtonElement | null) => {
+  const setTabRef = useCallback((index: number, el: HTMLDivElement | null) => {
     tabRefs.current[index] = el;
   }, []);
 
@@ -65,18 +63,16 @@ export function PlatformAllInOneTabList({
       aria-label="Platform capabilities"
     >
       {labels.map((label, index) => {
-        const selected = index === selectedIndex;
+        const selected = index === activeIndex;
         return (
-          <button
+          <div
             key={label}
             ref={(el) => setTabRef(index, el)}
-            type="button"
             role="tab"
             aria-selected={selected}
-            aria-controls={panelId}
+            aria-controls={panelIdPrefix ? `${panelIdPrefix}-${index}` : undefined}
             id={`platform-tab-${index}`}
             tabIndex={selected ? 0 : -1}
-            onClick={() => onSelect(index)}
             className={`w-max border-0 bg-transparent p-0 text-left font-helvetica-now-display transition-colors duration-200 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-text-main-900 ${
               selected
                 ? "text-text-main-900"
@@ -86,7 +82,7 @@ export function PlatformAllInOneTabList({
             <span className="relative block font-medium tracking-num--0_01 leading-6">
               {label}
             </span>
-          </button>
+          </div>
         );
       })}
 

@@ -1,3 +1,4 @@
+import { AnimatedTextReveal } from "@/src/features/shared/animated-text-reveal";
 import Image from "next/image";
 
 export type Content1Type = {
@@ -26,12 +27,12 @@ export default function Content1({
         />
         <div className="w-px flex-1 relative bg-stroke-sub-300" />
       </div>
-      <div className="flex min-w-[397px] flex-1 flex-col items-start gap-4">
+      <div className="flex min-w-0 flex-1 flex-col items-start gap-4">
         <div className="relative font-medium tracking-num--0_01 leading-6">
-          {postAJobGetQualifiedMat}
+          <AnimatedTextReveal text={postAJobGetQualifiedMat ?? ""} />
         </div>
         <div className="self-stretch relative text-left leading-6 text-text-sub-500">
-          {defineYourNeedsAndRequirements}
+          <AnimatedTextReveal text={defineYourNeedsAndRequirements ?? ""} />
         </div>
       </div>
     </div>

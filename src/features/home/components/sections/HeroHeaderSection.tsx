@@ -2,14 +2,15 @@ import Image from "next/image";
 import { HomeHeaderNavCluster } from "@/features/home/components/sections/HomeHeaderNavCluster";
 import { HeroTrustedByMarquee } from "@/features/home/components/sections/HeroTrustedByMarquee";
 import { SiteMarketingHeader } from "@/features/projects/components/sections/site-marketing-header";
+import { AnimatedTextReveal } from "@/features/shared/animated-text-reveal";
 import { UiproPillButton } from "@/features/shared/uipro-pill-button";
 
 export function HeroHeaderSection() {
   return (
-    <section className="w-num-1920 box-border flex max-w-full flex-col items-center justify-center gap-12 px-num-0 pb-num-86 text-center text-[16px] text-text-sub-500 font-helvetica-now-display">
+    <section className="w-full max-w-num-1920 box-border flex flex-col items-center justify-center gap-12 px-num-0 pb-num-86 text-center text-[16px] text-text-sub-500 font-helvetica-now-display">
       <SiteMarketingHeader centerSlot={<HomeHeaderNavCluster />} />
 
-      <div className="w-num-1920 box-border flex max-w-full flex-col items-center justify-center gap-[86px] px-num-180 py-[68px]">
+      <div className="w-full max-w-num-1920 box-border flex flex-col items-center justify-center gap-[86px] px-num-180 py-[68px]">
         <div className="flex flex-col items-center gap-8 self-stretch px-num-0 py-[68px]">
           <div className="flex items-center gap-3">
             <Image
@@ -34,11 +35,10 @@ export function HeroHeaderSection() {
           </div>
           <div className="flex flex-col items-center gap-5 self-stretch text-[64px] text-text-main-900">
             <h1 className="relative m-0 flex w-[1044px] max-w-full items-center justify-center text-[length:inherit] font-medium font-[inherit] leading-[72px] tracking-num--0_01">
-              Ship Production - Ready AI with Verified Domain Experts
+              <AnimatedTextReveal text="Ship Production - Ready AI with Verified Domain Experts" />
             </h1>
             <div className="relative self-stretch whitespace-pre-wrap text-num-18 leading-6 text-text-sub-500">
-              Work with verified experts worldwide to label, evaluate, and improve
-              your AI systems quickly and reliably.
+              <AnimatedTextReveal text="Work with verified experts worldwide to label, evaluate, and improve your AI systems quickly and reliably." />
             </div>
           </div>
           <div className="flex w-[274px] max-w-full items-center justify-center gap-4">

@@ -1,0 +1,37 @@
+.animated-text-reveal {
+  --reveal-duration: 620ms;
+  --reveal-easing: cubic-bezier(0.22, 1, 0.36, 1);
+  --reveal-y: 14px;
+  --reveal-blur: 8px;
+  --reveal-stagger: 55ms;
+}
+
+.animated-text-reveal .word {
+  display: inline-block;
+  transform: translateY(var(--reveal-y));
+  opacity: 0;
+  filter: blur(var(--reveal-blur));
+  will-change: transform, opacity, filter;
+}
+
+.animated-text-reveal.is-visible .word {
+  animation-name: text-reveal-word;
+  animation-duration: var(--reveal-duration);
+  animation-timing-function: var(--reveal-easing);
+  animation-fill-mode: forwards;
+  animation-delay: calc(var(--word-index, 0) * var(--reveal-stagger));
+}
+
+@keyframes text-reveal-word {
+  from {
+    transform: translateY(var(--reveal-y));
+    opacity: 0;
+    filter: blur(var(--reveal-blur));
+  }
+
+  to {
+    transform: translateY(0);
+    opacity: 1;
+    filter: blur(0);
+  }
+}

@@ -6,10 +6,11 @@ import {
   modelCapabilityTags,
 } from "@/features/home/data/home-content";
 import { SolutionTag } from "@/features/home/components/sections/SolutionTag";
+import { ScrollFadeInOnView } from "@/features/shared/scroll-fade-in-on-view";
 
 export function SolutionsSection() {
   return (
-    <section className="w-num-1920 flex flex-col items-center justify-center py-num-86 px-num-180 box-border gap-12 z-[7]">
+    <section className="w-full max-w-num-1920 flex flex-col items-center justify-center py-num-86 px-num-180 box-border gap-12 z-[7]">
       <Content
         arrowPixel="/uipro-assets/Arrow-Pixel.svg"
         aLLINONEPLATFORM="Solutions"
@@ -17,8 +18,11 @@ export function SolutionsSection() {
         onePlatformToFindHireAndMan="Find the right talent for any data workflow"
         sourceVettedProfessionalsCollab="From model training to data operations, work with specialists who fit your exact needs - fast, flexible, and reliable."
       />
-      <div className="w-num-1024 flex items-start gap-8">
-        <section className="self-stretch flex-[0.9032] rounded-num-24 border-stroke-sub-300 border-solid border-[1px] overflow-hidden flex flex-col items-center justify-center py-num-22 px-num-23 gap-6 text-left text-[16px] text-text-main-900 font-helvetica-now-display">
+      <div className="w-full max-w-num-1024 flex items-start gap-8">
+        <ScrollFadeInOnView
+          as="section"
+          className="self-stretch flex-[0.9032] rounded-num-24 border-stroke-sub-300 border-solid border-[1px] overflow-hidden flex flex-col items-center justify-center py-num-22 px-num-23 gap-6 text-left text-[16px] text-text-main-900 font-helvetica-now-display"
+        >
           <div className="self-stretch flex flex-col items-start gap-4">
             <div className="self-stretch relative tracking-num-0_06 leading-6 uppercase font-medium">
               Models & Intelligent Systems
@@ -49,10 +53,14 @@ export function SolutionsSection() {
             arrowLeftSLineFlex="unset"
             arrowLeftSLineAlignSelf="stretch"
           />
-        </section>
+        </ScrollFadeInOnView>
 
         <section className="self-stretch flex-1 flex flex-col items-start justify-center gap-8 text-left text-[16px] text-text-main-900 font-helvetica-now-display">
-          <div className="self-stretch rounded-num-24 border-stroke-sub-300 border-solid border-[1px] overflow-hidden flex flex-col items-center justify-center py-num-22 px-num-23 gap-6">
+          <ScrollFadeInOnView
+            as="div"
+            className="self-stretch rounded-num-24 border-stroke-sub-300 border-solid border-[1px] overflow-hidden flex flex-col items-center justify-center py-num-22 px-num-23 gap-6"
+            delayMs={120}
+          >
             <div className="self-stretch flex flex-col items-start gap-4">
               <div className="self-stretch relative tracking-num-0_06 leading-6 uppercase font-medium">
                 Models & Intelligent Systems
@@ -77,9 +85,13 @@ export function SolutionsSection() {
               arrowLeftSLineFlex="unset"
               arrowLeftSLineAlignSelf="stretch"
             />
-          </div>
+          </ScrollFadeInOnView>
 
-          <div className="self-stretch rounded-num-24 border-stroke-sub-300 border-solid border-[1px] overflow-hidden flex flex-col items-center justify-center py-num-22 px-num-23 gap-6">
+          <ScrollFadeInOnView
+            as="div"
+            className="self-stretch rounded-num-24 border-stroke-sub-300 border-solid border-[1px] overflow-hidden flex flex-col items-center justify-center py-num-22 px-num-23 gap-6"
+            delayMs={180}
+          >
             <div className="self-stretch flex flex-col items-start gap-4">
               <div className="self-stretch relative tracking-num-0_06 leading-6 uppercase font-medium">
                 DATA COLLECTION
@@ -104,7 +116,7 @@ export function SolutionsSection() {
               arrowLeftSLineFlex="unset"
               arrowLeftSLineAlignSelf="stretch"
             />
-          </div>
+          </ScrollFadeInOnView>
         </section>
       </div>
     </section>

@@ -46,7 +46,7 @@ export default function CardExperts({
         <h3 className="m-0 self-stretch relative text-[length:inherit] leading-num-32 font-medium font-[inherit]">{postOnceGetMatchedWithTheRig}</h3>
         <div className="self-stretch relative text-num-18 leading-6 text-text-sub-500">{shareYourRequirementsAndReceive}</div>
       </div>
-      <div className="w-num-628 rounded-num-16 bg-bg-weak-100 flex flex-col items-start p-6 box-border">
+      <div className="w-full max-w-num-628 rounded-num-16 bg-bg-weak-100 flex flex-col items-start p-6 box-border">
         <Image className="w-full relative max-h-full h-auto object-cover" loading="lazy" width={574} height={230} sizes="100vw" alt="" src={image21} style={image21IconStyle} />
       </div>
     </section>

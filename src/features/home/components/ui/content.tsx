@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { AnimatedTextReveal } from "@/features/shared/animated-text-reveal";
 
 export type ContentType = {
   className?: string;
@@ -25,8 +26,12 @@ export default function Content({
         <Image className="h-5 w-5" loading="lazy" width={20} height={20} sizes="100vw" alt="" src={arrowPixel1} />
       </div>
       <div className="self-stretch flex flex-col items-start gap-4 text-num-40 text-text-main-900">
-        <h2 className="m-0 self-stretch relative text-[length:inherit] tracking-num--0_01 leading-num-48 font-medium font-[inherit]">{onePlatformToFindHireAndMan}</h2>
-        <div className="self-stretch relative text-num-18 leading-6 text-text-sub-500">{sourceVettedProfessionalsCollab}</div>
+        <h2 className="m-0 self-stretch relative text-[length:inherit] tracking-num--0_01 leading-num-48 font-medium font-[inherit]">
+          <AnimatedTextReveal text={onePlatformToFindHireAndMan ?? ""} />
+        </h2>
+        <div className="self-stretch relative text-num-18 leading-6 text-text-sub-500">
+          <AnimatedTextReveal text={sourceVettedProfessionalsCollab ?? ""} />
+        </div>
       </div>
     </section>
   );
