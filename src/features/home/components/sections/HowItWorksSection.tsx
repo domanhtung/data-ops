@@ -26,8 +26,7 @@ export function HowItWorksSection() {
             />
           ))}
         </div>
-        <ScrollFadeInOnView
-          as="div"
+        <div
           className="relative isolate flex w-full flex-col items-start justify-center gap-6 self-stretch overflow-hidden rounded-[20px] bg-bg-surface-700 p-4 sm:rounded-[22px] sm:p-5 md:p-6 lg:flex-1 lg:rounded-num-24 lg:gap-8"
         >
           <div className="z-[0] flex shrink-0 flex-1 flex-col items-start gap-3 self-stretch md:gap-4">
@@ -58,7 +57,7 @@ export function HowItWorksSection() {
             arrowLeftSLineFlex="unset"
             arrowLeftSLineAlignSelf="stretch"
           />
-        </ScrollFadeInOnView>
+        </div>
       </section>
     </section>
   );

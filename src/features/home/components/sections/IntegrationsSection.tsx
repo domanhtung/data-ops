@@ -16,14 +16,12 @@ export function IntegrationsSection() {
       />
       <section className="grid w-full max-w-num-1024 grid-cols-1 gap-3 rounded-[14px] p-1 min-[450px]:grid-cols-2 sm:gap-3.5 md:grid-cols-3 md:gap-4 lg:flex lg:flex-wrap lg:content-center lg:items-center lg:justify-center lg:gap-4 lg:rounded-num-16">
         {integrationLogos.map((item, index) => (
-          <ScrollFadeInOnView
+          <div
             key={index}
-            as="div"
             className="w-full lg:w-auto"
-            delayMs={Math.min(index * 35, 210)}
           >
             <IntegrationCard {...item} className="h-full w-full lg:w-auto" />
-          </ScrollFadeInOnView>
+          </div>
         ))}
       </section>
     </section>

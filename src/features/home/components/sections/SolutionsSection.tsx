@@ -20,8 +20,7 @@ export function SolutionsSection() {
         sourceVettedProfessionalsCollab="From model training to data operations, work with specialists who fit your exact needs - fast, flexible, and reliable."
       />
       <div className="flex w-full max-w-num-1024 flex-col items-start gap-4 md:gap-5 lg:flex-row lg:gap-6 xl:gap-8">
-        <ScrollFadeInOnView
-          as="section"
+        <section
           className="self-stretch flex flex-1 flex-col overflow-hidden rounded-[20px] border border-solid border-stroke-sub-300 px-4 py-4 text-left font-helvetica-now-display text-[15px] text-text-main-900 sm:rounded-[22px] sm:px-5 sm:py-5 md:text-[16px] lg:flex-[0.9032] lg:rounded-num-24 lg:px-6 lg:py-6 xl:px-num-23 xl:py-num-22"
         >
           <div className="self-stretch flex flex-col items-start gap-4">
@@ -55,13 +54,12 @@ export function SolutionsSection() {
             arrowLeftSLineFlex="unset"
             arrowLeftSLineAlignSelf="stretch"
           />
-        </ScrollFadeInOnView>
+        </section>
 
         <section className="self-stretch flex flex-1 flex-col items-start justify-center gap-4 text-left font-helvetica-now-display text-[15px] text-text-main-900 md:gap-5 md:text-[16px] lg:gap-6 xl:gap-8">
-          <ScrollFadeInOnView
-            as="div"
+          <div
             className="self-stretch flex flex-col overflow-hidden rounded-[20px] border border-solid border-stroke-sub-300 px-4 py-4 sm:rounded-[22px] sm:px-5 sm:py-5 lg:rounded-num-24 lg:px-6 lg:py-6 xl:px-num-23 xl:py-num-22"
-            delayMs={120}
+
           >
             <div className="self-stretch flex flex-col items-start gap-4">
               <div className="self-stretch text-[11px] font-medium uppercase leading-5 tracking-[0.04em] md:text-xs md:tracking-[0.05em] lg:text-sm lg:leading-6 lg:tracking-num-0_06">
@@ -88,12 +86,11 @@ export function SolutionsSection() {
               arrowLeftSLineFlex="unset"
               arrowLeftSLineAlignSelf="stretch"
             />
-          </ScrollFadeInOnView>
+          </div>
 
-          <ScrollFadeInOnView
-            as="div"
+          <div
             className="self-stretch flex flex-col overflow-hidden rounded-[20px] border border-solid border-stroke-sub-300 px-4 py-4 sm:rounded-[22px] sm:px-5 sm:py-5 lg:rounded-num-24 lg:px-6 lg:py-6 xl:px-num-23 xl:py-num-22"
-            delayMs={180}
+
           >
             <div className="self-stretch flex flex-col items-start gap-4">
               <div className="self-stretch text-[11px] font-medium uppercase leading-5 tracking-[0.04em] md:text-xs md:tracking-[0.05em] lg:text-sm lg:leading-6 lg:tracking-num-0_06">
@@ -120,7 +117,7 @@ export function SolutionsSection() {
               arrowLeftSLineFlex="unset"
               arrowLeftSLineAlignSelf="stretch"
             />
-          </ScrollFadeInOnView>
+          </div>
         </section>
       </div>
     </section>

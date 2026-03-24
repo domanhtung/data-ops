@@ -4,7 +4,6 @@ import { useEffect, useLayoutEffect, useRef, useState } from "react";
 import { PlatformAllInOneTabList } from "@/features/home/components/sections/PlatformAllInOneTabList";
 import CardExperts from "@/features/home/components/ui/card-experts";
 import Content from "@/features/home/components/ui/content";
-import { ScrollFadeInOnView } from "@/features/shared/scroll-fade-in-on-view";
 import {
   cardExpertsItems,
   platformAllInOneTabLabels,
@@ -153,9 +152,7 @@ export function PlatformAllInOneSection() {
                   {platformAllInOneTabLabels[index] ?? `Step ${index + 1}`}
                 </div>
               </div>
-              <ScrollFadeInOnView delayMs={Math.min(index * 80, 240)}>
-                <CardExperts {...item} />
-              </ScrollFadeInOnView>
+              <CardExperts {...item} />
             </div>
           ))}
         </div>

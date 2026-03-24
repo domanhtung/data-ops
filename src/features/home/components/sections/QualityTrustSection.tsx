@@ -51,7 +51,7 @@ export function QualityTrustSection() {
       </section>
 
       <div className="z-[1] flex w-full max-w-[1100px] shrink-0 flex-col items-center gap-6 md:gap-7 lg:gap-8 xl:hidden">
-        <ScrollFadeInOnView as="div" className="w-full max-w-[560px]" durationMs={700}>
+        <div className="w-full max-w-[560px]">
           <Image
             className="h-auto w-full object-cover"
             width={460}
@@ -60,18 +60,18 @@ export function QualityTrustSection() {
             alt=""
             src="/uipro-assets/Frame-19@2x.png"
           />
-        </ScrollFadeInOnView>
+        </div>
         <div className="grid w-full grid-cols-1 justify-items-center gap-4 md:grid-cols-2 md:gap-5 lg:gap-6">
           {QUALITY_TRUST_ITEMS.map((item, index) => (
-            <ScrollFadeInOnView key={item.title} delayMs={80 + index * 60}>
+            <div key={item.title} >
               <FrameComponent title={item.title} subtext={item.subtext} />
-            </ScrollFadeInOnView>
+            </div>
           ))}
         </div>
       </div>
 
       <div className="relative isolate z-[1] hidden h-[943px] w-[1193px] max-w-full shrink-0 items-start gap-[74px] box-border px-num-0 pb-[91px] pt-[108px] xl:flex">
-        <ScrollFadeInOnView as="div" className="absolute !m-0 top-[calc(50%_-_180.5px)] left-[calc(50%_-_236.5px)] z-[2]" durationMs={700}>
+        <div className="absolute !m-0 top-[calc(50%_-_180.5px)] left-[calc(50%_-_236.5px)] z-[2]">
           <Image
             className="h-[345.3px] w-[460px] object-cover"
             width={460}
@@ -80,7 +80,7 @@ export function QualityTrustSection() {
             alt=""
             src="/uipro-assets/Frame-19@2x.png"
           />
-        </ScrollFadeInOnView>
+        </div>
         <Image
           className="h-[78px] w-[156px] absolute !m-0 top-[539px] left-[805.5px] z-0"
           width={156}
@@ -125,43 +125,33 @@ export function QualityTrustSection() {
         <section className="flex flex-col items-start pt-num-4 px-num-0 pb-num-0">
           <div className="flex flex-col items-start gap-[153px]">
             <div className="w-[383px] flex items-start justify-end">
-              <ScrollFadeInOnView delayMs={80}>
-                <FrameComponent
-                  title={QUALITY_TRUST_ITEMS[0].title}
-                  subtext={QUALITY_TRUST_ITEMS[0].subtext}
-                />
-              </ScrollFadeInOnView>
-            </div>
-            <ScrollFadeInOnView delayMs={140}>
               <FrameComponent
-                title={QUALITY_TRUST_ITEMS[1].title}
-                subtext={QUALITY_TRUST_ITEMS[1].subtext}
+                title={QUALITY_TRUST_ITEMS[0].title}
+                subtext={QUALITY_TRUST_ITEMS[0].subtext}
               />
-            </ScrollFadeInOnView>
+            </div>
+            <FrameComponent
+              title={QUALITY_TRUST_ITEMS[1].title}
+              subtext={QUALITY_TRUST_ITEMS[1].subtext}
+            />
           </div>
         </section>
         <div className="flex items-end gap-[25px] max-w-full">
-          <ScrollFadeInOnView delayMs={200}>
-            <FrameComponent
-              title={QUALITY_TRUST_ITEMS[2].title}
-              subtext={QUALITY_TRUST_ITEMS[2].subtext}
-            />
-          </ScrollFadeInOnView>
+          <FrameComponent
+            title={QUALITY_TRUST_ITEMS[2].title}
+            subtext={QUALITY_TRUST_ITEMS[2].subtext}
+          />
           <section className="h-[744px] w-[395px] flex flex-col items-start max-w-full">
             <div className="flex flex-col items-start gap-[157px]">
-              <ScrollFadeInOnView delayMs={260}>
-                <FrameComponent
-                  title={QUALITY_TRUST_ITEMS[3].title}
-                  subtext={QUALITY_TRUST_ITEMS[3].subtext}
-                />
-              </ScrollFadeInOnView>
+              <FrameComponent
+                title={QUALITY_TRUST_ITEMS[3].title}
+                subtext={QUALITY_TRUST_ITEMS[3].subtext}
+              />
               <div className="w-[395px] flex items-start justify-end">
-                <ScrollFadeInOnView delayMs={320}>
-                  <FrameComponent
-                    title={QUALITY_TRUST_ITEMS[4].title}
-                    subtext={QUALITY_TRUST_ITEMS[4].subtext}
-                  />
-                </ScrollFadeInOnView>
+                <FrameComponent
+                  title={QUALITY_TRUST_ITEMS[4].title}
+                  subtext={QUALITY_TRUST_ITEMS[4].subtext}
+                />
               </div>
             </div>
           </section>

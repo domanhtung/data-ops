@@ -26,8 +26,7 @@ export function GetStartedBandSection() {
             sourceVettedProfessionalsCollab="A platform where companies connect with trusted specialists. Collaborate, contribute, and deliver better outcomes together."
           />
           <div className="mt-8 flex w-full max-w-num-1024 flex-col items-start gap-4 md:mt-10 md:gap-5 lg:flex-row lg:gap-6 xl:gap-8">
-            <ScrollFadeInOnView
-              as="div"
+            <div
               className="relative isolate flex w-full flex-1 flex-col items-start justify-center gap-6 overflow-hidden rounded-[20px] bg-neutral-900 p-4 sm:rounded-[22px] sm:p-5 md:p-6 lg:rounded-num-24 lg:gap-8"
             >
               <div className="z-[0] flex shrink-0 flex-col items-start gap-4 self-stretch">
@@ -60,11 +59,10 @@ export function GetStartedBandSection() {
                 arrowLeftSLineFlex="unset"
                 arrowLeftSLineAlignSelf="unset"
               />
-            </ScrollFadeInOnView>
-            <ScrollFadeInOnView
-              as="div"
+            </div>
+            <div
               className="relative isolate flex w-full flex-1 flex-col items-start justify-center gap-6 overflow-hidden rounded-[20px] bg-neutral-900 p-4 sm:rounded-[22px] sm:p-5 md:p-6 lg:rounded-num-24 lg:gap-8"
-              delayMs={140}
+
             >
               <div className="z-[0] flex shrink-0 flex-col items-start gap-4 self-stretch">
                 <h3 className="m-0 self-stretch text-[length:inherit] font-medium font-[inherit] leading-[1.28] tracking-[-0.01em] lg:leading-num-32">
@@ -96,7 +94,7 @@ export function GetStartedBandSection() {
                 arrowLeftSLineFlex="unset"
                 arrowLeftSLineAlignSelf="unset"
               />
-            </ScrollFadeInOnView>
+            </div>
           </div>
         </section>
       </div>

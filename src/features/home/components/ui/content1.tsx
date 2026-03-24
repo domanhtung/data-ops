@@ -29,10 +29,10 @@ export default function Content1({
       </div>
       <div className="flex min-w-0 flex-1 flex-col items-start gap-3 md:gap-3.5 lg:gap-4">
         <div className="relative text-[length:inherit] font-medium leading-6 tracking-[-0.01em]">
-          <AnimatedTextReveal text={postAJobGetQualifiedMat ?? ""} />
+          {postAJobGetQualifiedMat}
         </div>
         <div className="relative self-stretch text-left text-sm leading-6 text-text-sub-500 md:text-[15px] lg:text-base xl:text-[17px] 2xl:text-num-18">
-          <AnimatedTextReveal text={defineYourNeedsAndRequirements ?? ""} />
+          {defineYourNeedsAndRequirements}
         </div>
       </div>
     </div>

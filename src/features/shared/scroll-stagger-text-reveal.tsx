@@ -7,7 +7,7 @@ type ScrollStaggerTextRevealProps = {
   className?: string;
   startViewportRatio?: number;
   endViewportRatio?: number;
-  /** Multiplies scroll distance needed for full reveal (>1 = slower). Default 1. */
+  /** Multiplies scroll distance needed for full reveal (>1 = slower). Default 1.2. */
   scrollStretch?: number;
   maxBlurPx?: number;
 };
@@ -21,7 +21,7 @@ export function ScrollStaggerTextReveal({
   className = "",
   startViewportRatio = 0.9,
   endViewportRatio = 0.25,
-  scrollStretch = 1,
+  scrollStretch = 1.2,
   maxBlurPx = 6,
 }: ScrollStaggerTextRevealProps) {
   const [progress, setProgress] = useState(0);
@@ -93,7 +93,7 @@ export function ScrollStaggerTextReveal({
             return (
               <span
                 key={`${lineIdx}-${wordIdx}`}
-                className={`inline-block transition-colors duration-300 ease-out ${isRevealed ? "text-text-main-900" : "text-text-sub-500"}`}
+                className={`inline-block transition-[opacity,filter,transform,color] duration-300 ease-out ${isRevealed ? "text-text-main-900" : "text-text-sub-500"}`}
                 style={{
                   opacity: 0.28 + wordProgress * 0.72,
                   filter: `blur(${blurPx}px)`,

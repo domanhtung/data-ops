@@ -25,15 +25,14 @@ export function FaqSection() {
       <div className="w-full max-w-num-1024">
         <div className="flex w-full flex-col items-start gap-4 self-stretch">
           {faqItems.map((item, index) => (
-            <ScrollFadeInOnView key={index} delayMs={Math.min(index * 50, 220)}>
+            <div key={index} >
               <FaqAccordionItem item={item} />
-            </ScrollFadeInOnView>
+            </div>
           ))}
         </div>
       </div>
 
-      <ScrollFadeInOnView
-        as="section"
+      <section
         className="box-border flex w-full max-w-num-1024 flex-col items-start justify-center gap-5 overflow-hidden rounded-[10px] bg-neutral-900 p-4 text-left font-helvetica-now-display text-[24px] text-stroke-white-0 sm:rounded-[11px] sm:p-5 md:text-[26px] lg:flex-row lg:items-end lg:gap-6 lg:rounded-num-12 lg:p-6 xl:text-[30px] 2xl:text-[32px]"
       >
         <div className="flex flex-1 flex-col items-start gap-4">
@@ -55,7 +54,7 @@ export function FaqSection() {
           arrowLeftSLineFlex="unset"
           arrowLeftSLineAlignSelf="unset"
         />
-      </ScrollFadeInOnView>
+      </section>
     </section>
   );
 }
