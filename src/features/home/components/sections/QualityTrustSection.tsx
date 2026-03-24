@@ -2,45 +2,75 @@ import Image from "next/image";
 import FrameComponent from "@/features/home/components/ui/frame-component";
 import { AnimatedTextReveal } from "@/features/shared/animated-text-reveal";
 import { ScrollFadeInOnView } from "@/features/shared/scroll-fade-in-on-view";
+import { ArrowEyebrow } from "@/features/shared/arrow-eyebrow";
+
+const QUALITY_TRUST_ITEMS = [
+  {
+    title: "Global Expert Network",
+    subtext:
+      "Access a worldwide pool of vetted professionals across industries, languages, and specialized domains.",
+  },
+  {
+    title: "Smart Matching",
+    subtext:
+      "Get connected with the right experts based on your needs, skills, and project requirements.",
+  },
+  {
+    title: "Curated Shortlists",
+    subtext:
+      "Receive a focused list of qualified candidates aligned with your goals, timeline, and scope.",
+  },
+  {
+    title: "Domain Specialists",
+    subtext:
+      "Work with experts who bring deep, real-world experience - not generalists.",
+  },
+  {
+    title: "Proven Skills",
+    subtext:
+      "Experts are evaluated through real tasks and past work - so you know they can deliver.",
+  },
+];
 
 export function QualityTrustSection() {
   return (
-    <section className="w-full max-w-num-1920 flex flex-col items-center justify-center py-num-86 px-num-180 box-border relative isolate gap-12 z-[4]">
+    <section className="relative isolate z-[4] box-border flex w-full max-w-num-1920 flex-col items-center justify-center gap-8 px-4 py-12 sm:px-6 sm:py-14 md:gap-10 md:px-8 md:py-16 lg:gap-11 lg:px-12 lg:py-20 xl:gap-12 xl:px-16 xl:py-24 2xl:px-num-180 2xl:py-num-86">
       <Image
-        className="w-full max-w-num-1920 h-[1365.3px] absolute !m-0 top-[calc(50%_-_766.5px)] left-1/2 -translate-x-1/2 object-contain z-[0] shrink-0"
+        className="pointer-events-none absolute left-1/2 top-1/2 z-[0] hidden h-[1200px] w-full max-w-num-1920 -translate-x-1/2 -translate-y-1/2 object-contain opacity-80 lg:block 2xl:h-[1365.3px]"
         width={1920}
         height={1365}
         sizes="100vw"
         alt=""
         src="/uipro-assets/Grid-layers-v2@2x.png"
       />
-      <section className="self-stretch flex flex-col items-center gap-6 z-[1] shrink-0 text-center text-[16px] text-text-sub-500 font-helvetica-now-display">
-        <div className="flex items-center gap-3">
-          <Image
-            className="h-5 w-5 object-contain"
-            width={20}
-            height={20}
-            sizes="100vw"
-            alt=""
-            src="/uipro-assets/Arrow-Pixel.svg"
-          />
-          <div className="relative tracking-num-0_06 leading-6 uppercase font-medium">
-            QUALITY & TRUST
-          </div>
-          <Image
-            className="h-5 w-5"
-            width={20}
-            height={20}
-            sizes="100vw"
-            alt=""
-            src="/uipro-assets/Arrow-Pixel1.svg"
-          />
-        </div>
-        <h2 className="m-0 self-stretch relative text-num-40 tracking-num--0_01 leading-num-48 font-medium font-[inherit] text-text-main-900">
+      <section className="z-[1] flex shrink-0 flex-col items-center gap-4 self-stretch text-center font-helvetica-now-display text-[15px] text-text-sub-500 md:gap-5 md:text-[16px]">
+        <ArrowEyebrow label="QUALITY & TRUST" />
+        <h2 className="relative m-0 self-stretch text-[30px] font-medium leading-[1.16] tracking-[-0.01em] text-text-main-900 md:text-[34px] lg:text-[36px] xl:text-[38px] 2xl:text-num-40 2xl:leading-num-48">
           <AnimatedTextReveal text="Where teams find the right experts" />
         </h2>
       </section>
-      <div className="w-[1193px] h-[943px] flex items-start pt-[108px] px-num-0 pb-[91px] box-border relative isolate gap-[74px] max-w-full z-[1] shrink-0">
+
+      <div className="z-[1] flex w-full max-w-[1100px] shrink-0 flex-col items-center gap-6 md:gap-7 lg:gap-8 xl:hidden">
+        <ScrollFadeInOnView as="div" className="w-full max-w-[560px]" durationMs={700}>
+          <Image
+            className="h-auto w-full object-cover"
+            width={460}
+            height={345}
+            sizes="100vw"
+            alt=""
+            src="/uipro-assets/Frame-19@2x.png"
+          />
+        </ScrollFadeInOnView>
+        <div className="grid w-full grid-cols-1 justify-items-center gap-4 md:grid-cols-2 md:gap-5 lg:gap-6">
+          {QUALITY_TRUST_ITEMS.map((item, index) => (
+            <ScrollFadeInOnView key={item.title} delayMs={80 + index * 60}>
+              <FrameComponent title={item.title} subtext={item.subtext} />
+            </ScrollFadeInOnView>
+          ))}
+        </div>
+      </div>
+
+      <div className="relative isolate z-[1] hidden h-[943px] w-[1193px] max-w-full shrink-0 items-start gap-[74px] box-border px-num-0 pb-[91px] pt-[108px] xl:flex">
         <ScrollFadeInOnView as="div" className="absolute !m-0 top-[calc(50%_-_180.5px)] left-[calc(50%_-_236.5px)] z-[2]" durationMs={700}>
           <Image
             className="h-[345.3px] w-[460px] object-cover"
@@ -97,15 +127,15 @@ export function QualityTrustSection() {
             <div className="w-[383px] flex items-start justify-end">
               <ScrollFadeInOnView delayMs={80}>
                 <FrameComponent
-                  title="Global Expert Network"
-                  subtext="Access a worldwide pool of vetted professionals across industries, languages, and specialized domains."
+                  title={QUALITY_TRUST_ITEMS[0].title}
+                  subtext={QUALITY_TRUST_ITEMS[0].subtext}
                 />
               </ScrollFadeInOnView>
             </div>
             <ScrollFadeInOnView delayMs={140}>
               <FrameComponent
-                title="Smart Matching"
-                subtext="Get connected with the right experts based on your needs, skills, and project requirements."
+                title={QUALITY_TRUST_ITEMS[1].title}
+                subtext={QUALITY_TRUST_ITEMS[1].subtext}
               />
             </ScrollFadeInOnView>
           </div>
@@ -113,23 +143,23 @@ export function QualityTrustSection() {
         <div className="flex items-end gap-[25px] max-w-full">
           <ScrollFadeInOnView delayMs={200}>
             <FrameComponent
-              title="Curated Shortlists"
-              subtext="Receive a focused list of qualified candidates aligned with your goals, timeline, and scope."
+              title={QUALITY_TRUST_ITEMS[2].title}
+              subtext={QUALITY_TRUST_ITEMS[2].subtext}
             />
           </ScrollFadeInOnView>
           <section className="h-[744px] w-[395px] flex flex-col items-start max-w-full">
             <div className="flex flex-col items-start gap-[157px]">
               <ScrollFadeInOnView delayMs={260}>
                 <FrameComponent
-                  title="Domain Specialists"
-                  subtext="Work with experts who bring deep, real-world experience - not generalists."
+                  title={QUALITY_TRUST_ITEMS[3].title}
+                  subtext={QUALITY_TRUST_ITEMS[3].subtext}
                 />
               </ScrollFadeInOnView>
               <div className="w-[395px] flex items-start justify-end">
                 <ScrollFadeInOnView delayMs={320}>
                   <FrameComponent
-                    title="Proven Skills"
-                    subtext="Experts are evaluated through real tasks and past work - so you know they can deliver."
+                    title={QUALITY_TRUST_ITEMS[4].title}
+                    subtext={QUALITY_TRUST_ITEMS[4].subtext}
                   />
                 </ScrollFadeInOnView>
               </div>

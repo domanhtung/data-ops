@@ -27,11 +27,12 @@ export default function CardExperts({
   image21IconMixBlendMode,
 }: CardExpertsType) {
   const cardExpertsStyle: CSSProperties = useMemo(() => {
-                  return {
-                    padding: cardExpertsPadding
-                  };
-                }, [cardExpertsPadding]);
-              
+    if (!cardExpertsPadding) return {};
+    return {
+      ["--card-experts-padding" as string]: cardExpertsPadding,
+    };
+  }, [cardExpertsPadding]);
+
   const image21IconStyle: CSSProperties = useMemo(() => {
     return image21IconMixBlendMode
       ? {
@@ -39,15 +40,31 @@ export default function CardExperts({
         }
       : {};
   }, [image21IconMixBlendMode]);
-              
+
   return (
-    <section className={`self-stretch rounded-num-24 border-silver border-solid border-[1px] overflow-hidden flex flex-col items-center justify-center py-num-22 px-num-23 gap-6 text-left text-[24px] text-text-main-900 font-helvetica-now-display ${className}`} style={cardExpertsStyle}>
-      <div className="self-stretch flex flex-col items-start gap-4">
-        <h3 className="m-0 self-stretch relative text-[length:inherit] leading-num-32 font-medium font-[inherit]">{postOnceGetMatchedWithTheRig}</h3>
-        <div className="self-stretch relative text-num-18 leading-6 text-text-sub-500">{shareYourRequirementsAndReceive}</div>
+    <section
+      className={`self-stretch overflow-hidden rounded-[20px] border border-solid border-silver px-4 py-4 text-left font-helvetica-now-display text-[20px] text-text-main-900 md:rounded-[22px] md:px-5 md:py-5 md:text-[21px] lg:rounded-num-24 lg:px-6 lg:py-6 lg:text-[22px] xl:px-num-23 xl:py-num-22 xl:[padding:var(--card-experts-padding)] xl:text-[23px] 2xl:text-[24px] ${className}`}
+      style={cardExpertsStyle}
+    >
+      <div className="self-stretch flex flex-col items-start gap-3 md:gap-3.5 lg:gap-4">
+        <h3 className="m-0 self-stretch text-[length:inherit] font-medium font-[inherit] leading-[1.25] tracking-[-0.01em] md:leading-[1.28] lg:leading-num-32">
+          {postOnceGetMatchedWithTheRig}
+        </h3>
+        <div className="self-stretch text-sm leading-6 tracking-[-0.002em] text-text-sub-500 md:text-[15px] lg:text-base xl:text-[17px] 2xl:text-num-18">
+          {shareYourRequirementsAndReceive}
+        </div>
       </div>
-      <div className="w-full max-w-num-628 rounded-num-16 bg-bg-weak-100 flex flex-col items-start p-6 box-border">
-        <Image className="w-full relative max-h-full h-auto object-cover" loading="lazy" width={574} height={230} sizes="100vw" alt="" src={image21} style={image21IconStyle} />
+      <div className="mt-4 box-border flex w-full max-w-num-628 flex-col items-start rounded-[14px] bg-bg-weak-100 p-3 md:mt-5 md:rounded-[15px] md:p-4 lg:rounded-num-16 lg:p-5 xl:p-6">
+        <Image
+          className="relative h-auto max-h-full w-full object-cover"
+          loading="lazy"
+          width={574}
+          height={230}
+          sizes="100vw"
+          alt=""
+          src={image21}
+          style={image21IconStyle}
+        />
       </div>
     </section>
   );

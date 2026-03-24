@@ -1,33 +1,14 @@
 import Image from "next/image";
 import { ScrollStaggerTextReveal } from "@/features/shared/scroll-stagger-text-reveal";
+import { ArrowEyebrow } from "@/features/shared/arrow-eyebrow";
 
 export function ValuePropositionSection() {
   return (
-    <section className="w-full max-w-num-1920 flex flex-col items-center justify-center py-num-86 px-5 box-border gap-12 z-[2] text-center text-[16px] text-text-sub-500 font-helvetica-now-display">
-      <div className="flex items-center gap-3">
-        <Image
-          className="h-5 w-5 object-contain"
-          width={20}
-          height={20}
-          sizes="100vw"
-          alt=""
-          src="/uipro-assets/Arrow-Pixel.svg"
-        />
-        <div className="relative tracking-num-0_06 leading-6 uppercase font-medium">
-          Data Operations - from raw data to real AI
-        </div>
-        <Image
-          className="h-5 w-5"
-          width={20}
-          height={20}
-          sizes="100vw"
-          alt=""
-          src="/uipro-assets/Arrow-Pixel1.svg"
-        />
-      </div>
-      <div className="flex items-start justify-between text-[48px]">
-        <div className="w-full flex flex-col mx-auto items-start gap-12">
-          <h1 className="m-0 w-full max-w-[1200px] relative text-[length:inherit] tracking-num--0_01 leading-[56px] font-medium font-[inherit] flex items-center justify-center">
+    <section className="z-[2] box-border flex w-full max-w-num-1920 flex-col items-center justify-center gap-8 px-4 py-12 text-center font-helvetica-now-display text-[15px] text-text-sub-500 sm:px-5 sm:py-14 md:gap-10 md:px-8 md:py-16 md:text-[16px] lg:gap-11 lg:px-10 lg:py-20 xl:gap-12 xl:px-12 xl:py-24 2xl:py-num-86">
+      <ArrowEyebrow label="Data Operations - from raw data to real AI" />
+      <div className="flex w-full items-start justify-between text-left md:text-center text-[26px] sm:text-[30px] md:text-[34px] lg:text-[40px] xl:text-[46px] 2xl:text-[48px]">
+        <div className="mx-auto flex w-full flex-col items-start gap-6 md:gap-8 lg:gap-10 xl:gap-12">
+          <h1 className="relative my-0 mx-auto flex w-full max-w-[1200px] items-center justify-center text-[length:inherit] font-medium font-[inherit] leading-[1.2] tracking-[-0.01em] md:leading-[1.18] lg:leading-[1.16] xl:leading-[56px]">
             <ScrollStaggerTextReveal
               maxBlurPx={0}
               scrollStretch={1.5}

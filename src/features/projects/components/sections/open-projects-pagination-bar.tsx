@@ -25,6 +25,7 @@ export default function OpenProjectsPaginationBar({
   return (
     <div className="flex w-full flex-col items-stretch gap-4 sm:flex-row sm:flex-wrap sm:items-center sm:justify-between">
       <UiproPillButton
+        className="!hidden md:!inline-flex"
         inFlow
         onlyIcon="Off"
         size="Medium 40"
@@ -101,6 +102,7 @@ export default function OpenProjectsPaginationBar({
         </button>
       </div>
       <UiproPillButton
+        className="!hidden md:!inline-flex"
         inFlow
         onlyIcon="Off"
         size="Medium 40"

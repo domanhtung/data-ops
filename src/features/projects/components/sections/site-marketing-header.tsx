@@ -94,6 +94,7 @@ export function SiteMarketingHeader({
           className={clsx(
             `flex w-full items-center gap-4 py-4 xl:py-8`,
             SITE_PAGE_GUTTER_CLASS,
+            !centerSlot && "lg:justify-between",
           )}
         >
           <div className="shrink-0">
