@@ -72,20 +72,23 @@ export function ScrollStaggerTextReveal({
     };
   }, [startViewportRatio, endViewportRatio, scrollStretch]);
 
-  let globalWordIndex = 0;
+  // Precompute stable global indices per word (no mutation during render).
+  const globalWordIndexByLine = useMemo(() => {
+    let idx = 0;
+    return wordsByLine.map((words) => words.map(() => idx++));
+  }, [wordsByLine]);
 
   return (
     <span ref={ref} className={className}>
       {wordsByLine.map((words, lineIdx) => (
         <span key={`line-${lineIdx}`}>
           {words.map((word, wordIdx) => {
+            const globalWordIndex = globalWordIndexByLine[lineIdx][wordIdx];
             const revealStart = totalWords === 0 ? 0 : globalWordIndex / totalWords;
             const revealEnd = totalWords === 0 ? 1 : (globalWordIndex + 1) / totalWords;
             const wordProgress = clamp((progress - revealStart) / (revealEnd - revealStart), 0, 1);
             const blurPx = (1 - wordProgress) * maxBlurPx;
             const isRevealed = wordProgress >= 0.5;
-
-            globalWordIndex += 1;
 
             return (
               <span

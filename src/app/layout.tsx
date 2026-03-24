@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
-export const runtime = 'edge';
-
 export const metadata: Metadata = {
   title: "DataOps",
   description: "Ship production-ready AI with verified domain experts",
